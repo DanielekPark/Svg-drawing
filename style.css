@@ -1,0 +1,44 @@
+/* --------------------------
+  Keyframes
+--------------------------- */
+@keyframes offset {
+	100%{
+	  stroke-dashoffset: 0; 
+	}
+  }
+  
+  @keyframes fill-it {
+	100%{
+	  fill: #6fbc6d; 
+	}
+  }
+  
+  /* --------------------------
+	SVG Styles
+  --------------------------- */
+  
+  svg {
+	  display: block;
+	  margin: 2em auto 0;
+	  width: 40%;
+  }
+  
+  .logo{
+	stroke: #6fbc6d; 
+	stroke-width: 2; 
+	stroke-dasharray: 810; /*controls dashes and gaps*/
+	stroke-dashoffset: 810;  /*controls positioning, higher number determines movement*/
+	animation: offset 5s linear forwards, fill-it .8s 5s forwards; 
+	
+	/*-linear controls the the speed
+	 -forwards ends the animation on its final key frame, it won't reset*/
+  }
+  
+  /*
+  For the drawing animation set the path in the 
+   1. svg to transparent,
+   2. assign a color to stroke look at .logo
+   3. stroke-dashoffset & stroke-dasharray need to have the same number use: 
+   (var path = document.querySelector('.logo');
+	var length = path.getTotalLength();) to find the number
+  */
